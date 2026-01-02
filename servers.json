@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1767397733",
+        "name": "Local Server",
+        "ip": "127.0.0.1",
+        "user": "root",
+        "ssh_key": null,
+        "alerts": {
+            "cpu": 90,
+            "temp": 75,
+            "ram": 85,
+            "disk": 90,
+            "offline_sec": 30
+        }
+    }
+]
