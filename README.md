@@ -38,9 +38,19 @@ Proje, düşük kaynak tüketimi ve yüksek performans için şu teknolojileri k
 
 ---
 
+## ⚠️ Güvenlik Notu (Security Note)
+
+Mevcut implementasyonda SSH bağlantıları için `paramiko.AutoAddPolicy()` kullanılmaktadır.
+* **Risk:** Bu politika, SSH anahtarı bilinmeyen sunucuları otomatik olarak güvenilir kabul eder.
+* **Etki:** Yerel ağ veya test ortamları için pratik olsa da, dış ağa açık (production) ortamlarda **Man-in-the-Middle (MitM)** saldırılarına karşı zafiyet oluşturabilir. 
+* **Öneri:** Kritik sistemlerde host key doğrulaması yapılması veya bilinen anahtarların `known_hosts` dosyasına önceden eklenmesi tavsiye edilir.
+
+---
+
 ## 🚀 Hızlı Başlangıç
 
 ### 1. Gereksinimlerin Yüklenmesi
 Sisteminize gerekli kütüphaneleri yükleyin:
+
 ```bash
 pip install -r requirements.txt
